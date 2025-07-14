@@ -1,0 +1,57 @@
+
+:root {
+ 
+  --card-header-color: #333333; 
+  --welcome-message-color: #007bff; 
+  --card-border-color: rgba(0, 0, 0, 0.1); 
+  --card-shadow-color: rgba(0, 0, 0, 0.08); 
+}
+
+.boasvindas-card {
+
+  background-color: rgba(255, 255, 255, 0.75); 
+  border-radius: 10px; 
+  box-shadow: 0 2px 8px var(--card-shadow-color); 
+  padding: 20px; 
+  text-align: center; 
+  max-width: 400px;
+  width: 90%; 
+  z-index: 10;
+  border: 1px solid var(--card-border-color); 
+  min-width: 280px; 
+  box-sizing: border-box; 
+}
+
+.boasvindas-card .card-header {
+  font-size: 1.25rem; 
+  font-weight: bold; 
+  color: var(--card-header-color); 
+  margin-bottom: 12px; 
+  padding-bottom: 8px; 
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08); 
+}
+
+.boasvindas-card .card-body p {
+  font-size: 1.1rem; 
+  color: var(--welcome-message-color); 
+  font-weight: 500; 
+  margin-bottom: 0; 
+}
+
+.boasvindas-card .card-body strong {
+  color: #003366; 
+}
+
+
+@media (max-width: 576px) {
+  .boasvindas-card {
+    padding: 15px;
+    max-width: 95%;
+  }
+  .boasvindas-card .card-header {
+    font-size: 1.1rem;
+  }
+  .boasvindas-card .card-body p {
+    font-size: 1rem;
+  }
+}

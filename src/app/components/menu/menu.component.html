@@ -1,0 +1,29 @@
+<nav class="navbar navbar-dark fixed-top minimal-header">
+  <div class="container-fluid">
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+      <div class="offcanvas-header">
+        <a class="navbar-brand" routerLink="/home" data-bs-dismiss="offcanvas">
+          <img src="assets/img/ford.png" alt="Ford Logo" class="ford-logo-offcanvas">
+        </a>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      </div>
+      <div class="offcanvas-body">
+        <ul class="navbar-nav justify-content-start flex-grow-1 pe-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#" aria-current="page" routerLink="/home" routerLinkActive="active" data-bs-dismiss="offcanvas" (click)="navigateToHome()">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/dashboard" routerLinkActive="active" data-bs-dismiss="offcanvas" (click)="navigateToDashboard()">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" (click)="onLogout()" data-bs-dismiss="offcanvas">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

@@ -1,0 +1,30 @@
+<app-menu></app-menu>
+<div class="dashboard-container">
+    
+    <h1 class="dashboard-title">Dashboard FORD</h1>
+
+    <section class="dashboard-summary">
+        <div class="dashboard-vehicle-select-card">
+            <h2>Veículos</h2>
+            <select (change)='onChangeSelect($event)'>
+                @for(v of veiculos; track v.id){
+                    <option value="{{v.id}}"> {{v.vehicle}}</option>
+                }
+            </select>
+        </div>
+
+        <app-card [titulo]="'Total de vendas'" [valor]="veiculoSelecionado.volumetotal"/>
+        <app-card [titulo]="'Conectados'" [valor]="veiculoSelecionado.connected"/>
+        <app-card [titulo]="'Upd. Software'" [valor]="veiculoSelecionado.softwareUpdates"/>
+    </section>
+
+    <section class="dashboard-image-section">
+        <img [src]="veiculoSelecionado.img" alt="{{ veiculoSelecionado.vehicle }}">
+    </section>
+
+    <section class="dashboard-table-section">
+        <app-car-table [allVinData]="allVehicleTableData" />
+    </section>
+
+    
+</div>

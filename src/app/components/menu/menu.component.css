@@ -1,0 +1,98 @@
+:root {
+  --ford-primary-green: #00774D;
+  --ford-menu-text-active-bg: rgba(0, 119, 77, 0.1);
+  --header-height: 60px;
+}
+
+.navbar.fixed-top.minimal-header {
+  background-color: transparent !important;
+  box-shadow: none !important;
+  height: var(--header-height);
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  display: none;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+  margin-right: auto;
+}
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgb(0, 119, 77)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  filter: none;
+  width: 2em;
+  height: 2em;
+}
+
+.offcanvas.offcanvas-start {
+  background-color: #ffffff !important;
+  width: 250px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.offcanvas-header .navbar-brand {
+  display: block !important;
+  margin: 0;
+  padding: 0;
+  height: auto;
+}
+
+.offcanvas-header .ford-logo-offcanvas {
+  max-width: 150px;
+  height: auto;
+  filter: none;
+}
+
+.offcanvas-header .btn-close {
+  background-color: transparent;
+  opacity: 1;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%2300774D'%3e%3cpath d='M.293.293a1 1 0 011.414 0L8 6.586 14.293.293a1 1 0 111.414 1.414L9.414 8l6.293 6.293a1 1 0 01-1.414 1.414L8 9.414l-6.293 6.293a1 1 0 01-1.414-1.414L6.586 8 .293 1.707a1 1 0 010-1.414z'/%3e%3c/svg%3e");
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 1.25rem;
+  filter: none;
+}
+
+.offcanvas-header .btn-close:hover {
+  opacity: 0.8;
+}
+
+.offcanvas-body {
+  padding-top: 0;
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link {
+  color: var(--ford-primary-green);
+  padding: 12px 15px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  font-size: 1.1rem;
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link:hover {
+  background-color: rgba(0, 119, 77, 0.05);
+  border-radius: 5px;
+}
+
+.offcanvas-body .navbar-nav .nav-item .nav-link.active {
+  background-color: var(--ford-menu-text-active-bg);
+  color: var(--ford-primary-green);
+  font-weight: bold;
+  border-left: none;
+  padding-left: 15px;
+}
+
+.home-content-wrapper {
+  padding-top: var(--header-height);
+}

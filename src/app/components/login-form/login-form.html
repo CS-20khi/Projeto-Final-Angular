@@ -1,0 +1,76 @@
+<div class="login-container">
+  <div class="left-side">
+    <img src="assets/img/ranger.png" alt="Ford Ranger" class="ranger-image">
+  </div>
+
+  <div class="right-side">
+    <div class="login-box card shadow-lg">
+      <div class="card-body">
+        <div class="text-center mb-4">
+          <img src="assets/img/ford.png" alt="Ford Logo" class="ford-logo">
+        </div>
+
+        <h4 class="welcome-title text-center mb-4">Boas-vindas</h4>
+
+        <div *ngIf="errorMessage"
+             class="alert mb-4"
+             [ngClass]="{'alert-danger': alertType === 'error', 'alert-success': alertType === 'success'}"
+             role="alert">
+          {{ errorMessage }}
+        </div>
+
+        <form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()">
+
+          <div class="mb-3 input-group custom-input-group">
+            <span class="input-group-text"><i class="bi bi-person"></i></span>
+            <input
+              type="text" class="form-control"
+              formControlName="nome" placeholder="Insira seu nome de usuário" id="nomeInput"
+              [class.is-invalid]="loginForm.get('nome')?.invalid && (loginForm.get('nome')?.dirty || loginForm.get('nome')?.touched)"
+            >
+            <span class="input-group-text"><i class="bi bi-info-circle"></i></span>
+            <div class="invalid-feedback" *ngIf="loginForm.get('nome')?.errors?.['required']">
+              Nome de usuário é obrigatório.
+            </div>
+            <div class="invalid-feedback" *ngIf="loginForm.get('nome')?.errors?.['minlength']">
+              Nome de usuário deve ter no mínimo 3 caracteres.
+            </div>
+          </div>
+
+          <div class="mb-3 input-group custom-input-group">
+            <span class="input-group-text"><i class="bi bi-lock"></i></span>
+            <input
+              type="password"
+              class="form-control"
+              formControlName="senha"
+              placeholder="Insira sua senha"
+              id="senhaInput"
+              [class.is-invalid]="loginForm.get('senha')?.invalid && (loginForm.get('senha')?.dirty || loginForm.get('senha')?.touched)"
+            >
+            <span class="input-group-text"><i class="bi bi-eye-slash"></i></span>
+            <div class="invalid-feedback" *ngIf="loginForm.get('senha')?.errors?.['required']">
+              Senha é obrigatória.
+            </div>
+            <div class="invalid-feedback" *ngIf="loginForm.get('senha')?.errors?.['minlength']">
+              Senha deve ter no mínimo 6 caracteres.
+            </div>
+          </div>
+
+          <div class="mb-4 form-check form-switch d-flex justify-content-between align-items-center">
+            <label class="form-check-label" for="autoLoginSwitch">Logar automaticamente</label>
+            <input class="form-check-input" type="checkbox" role="switch" id="autoLoginSwitch" formControlName="logarAutomaticamente">
+            <i class="bi bi-info-circle text-muted ms-2" data-bs-toggle="tooltip" data-bs-placement="top" title="Mantenha-me logado neste dispositivo."></i>
+          </div>
+
+          <button 
+            type="submit" 
+            class="btn btn-primary w-100 py-2"
+            [disabled]="loginForm.invalid"                         [class.btn-active-blue]="loginForm.valid"             >
+            Entrar
+          </button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

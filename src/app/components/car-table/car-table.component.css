@@ -1,0 +1,88 @@
+
+:root {
+    --ford-blue: #0000FF; 
+    --ford-dark-blue: #0000CD; 
+    --ford-table-header-bg: #00008B; 
+    --ford-table-header-text: #ffffff; 
+    --ford-border-color: #dee2e6; 
+    --table-bg-odd: #f9f9f9; 
+    --table-bg-even: #ffffff; 
+}
+
+
+.table-container h2 {
+    font-size: 1.1rem; 
+    color: #333; 
+}
+
+
+.input-group .form-control {
+    font-size: 0.85rem;
+    padding: 7px 10px; 
+}
+
+.input-group .btn-primary {
+   
+    flex-shrink: 0;
+    white-space: nowrap; 
+    
+    
+    background-color: var(--ford-blue);
+    border-color: var(--ford-blue);
+    color: var(--ford-table-header-text); 
+}
+
+.input-group .btn-primary:hover {
+    background-color: var(--ford-dark-blue);
+    border-color: var(--ford-dark-blue);
+}
+
+
+.table {
+    
+    font-size: 0.8rem;
+    table-layout: fixed;
+}
+
+
+.table thead th {
+    font-size: 0.75rem; 
+    padding: 8px 10px; 
+    background-color: var(--ford-table-header-bg);
+    color: var(--ford-table-header-text);
+    border: 1px solid var(--ford-table-header-bg); 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+}
+
+
+.table tbody td {
+    font-size: 0.75rem; 
+    padding: 6px 8px; 
+    border: 1px solid var(--ford-border-color); 
+    overflow: hidden; 
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+}
+
+
+.table th:nth-child(1), .table td:nth-child(1) { width: 30%; } 
+.table th:nth-child(2), .table td:nth-child(2) { width: 12%; } 
+.table th:nth-child(3), .table td:nth-child(3) { width: 18%; } 
+.table th:nth-child(4), .table td:nth-child(4) { width: 10%; } 
+.table th:nth-child(5), .table td:nth-child(5) { width: 15%; } 
+.table th:nth-child(6), .table td:nth-child(6) { width: 15%; } 
+
+
+
+@media (max-width: 768px) {
+    .table-container h2 { font-size: 1rem; }
+    .input-group .form-control, .input-group .btn-primary { font-size: 0.8rem; padding: 5px 8px; }
+    .table thead th, .table tbody td { font-size: 0.7rem; padding: 4px 6px; }
+    
+}
+@media (max-width: 480px) {
+    
+    .input-group { flex-direction: column; }
+    .input-group .form-control { margin-bottom: 5px; }
+}

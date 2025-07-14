@@ -1,0 +1,184 @@
+
+:root {
+    --ford-blue: #0000FF;  
+    --ford-dark-blue: #0000CD;
+    --ford-light-grey: #f0f0f0;
+    --ford-border-color: #dee2e6;
+    --ford-table-header-bg: #00008B;
+    --ford-table-header-text: #ffffff;
+    --card-border-color: #e0e0e0; 
+}
+
+
+.dashboard-container {
+    padding: 15px; 
+    background-color: #ffffff;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; 
+}
+
+h1.dashboard-title {
+    color: var(--ford-blue); 
+    text-align: center;
+    margin-bottom: 25px; 
+    font-size: 2.0rem; 
+    font-weight: bold;
+}
+
+
+.dashboard-summary {
+    display: flex;
+    justify-content: center; 
+    gap: 15px; 
+    margin-bottom: 25px; 
+    flex-wrap: wrap;
+    align-items: flex-start; 
+}
+
+.dashboard-vehicle-select-card {
+    background-color: #ffffff;
+    border: 1px solid var(--card-border-color);
+    border-radius: 8px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); 
+    padding: 15px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    min-width: 100px; 
+    max-width: 160px; 
+    flex-grow: 1;
+    flex-shrink: 1;
+    align-self: stretch; 
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.dashboard-vehicle-select-card h2 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #000; 
+}
+.dashboard-vehicle-select-card select {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid var(--ford-border-color);
+    border-radius: 5px;
+    font-size: 1rem;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    text-align: center;
+}
+
+.dashboard-vehicle-select-card select:focus {
+    outline: none;
+    border-color: var(--ford-blue);
+    box-shadow: 0 0 0 0.15rem rgba(0, 0, 255, 0.25);
+}
+
+app-card {
+    flex-grow: 1; 
+    min-width: 100px; 
+    max-width: 160px; 
+}
+
+
+.dashboard-image-section {
+    text-align: center;
+    margin-bottom: 25px;
+    padding: 10px;
+}
+
+.dashboard-image-section img {
+    max-width: 60%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    box-shadow: none;
+    border-radius: 0;
+    border: none;
+}
+
+
+.dashboard-table-section {
+    margin-bottom: 15px;
+}
+
+app-car-table::ng-deep table {
+    margin-top: 15px;
+}
+
+app-car-table::ng-deep th {
+    padding: 8px 10px;
+    font-size: 0.8rem; 
+}
+
+app-car-table::ng-deep td {
+    padding: 6px 8px;
+    font-size: 0.75rem; 
+}
+
+
+
+@media (max-width: 992px) {
+    .dashboard-image-section img {
+        max-width: 70%;
+    }
+    .dashboard-summary {
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+    h1.dashboard-title {
+        font-size: 1.8rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-summary {
+        flex-direction: column; 
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+    .dashboard-vehicle-select-card,
+    app-card {
+        width: 95%; 
+        max-width: 250px;
+        padding: 8px 12px;
+    }
+    .dashboard-image-section img {
+        max-width: 80%;
+    }
+    h1.dashboard-title {
+        font-size: 1.6rem;
+    }
+    app-car-table::ng-deep th,
+    app-car-table::ng-deep td {
+        font-size: 0.7rem;
+        padding: 6px 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 8px;
+    }
+    h1.dashboard-title {
+        font-size: 1.4rem;
+        margin-bottom: 10px;
+    }
+    .dashboard-vehicle-select-card,
+    app-card {
+        padding: 6px 10px;
+    }
+    .dashboard-image-section img {
+        max-width: 95%;
+        margin-bottom: 10px;
+    }
+    app-car-table::ng-deep th,
+    app-car-table::ng-deep td {
+        font-size: 0.65rem;
+        padding: 5px 7px;
+    }
+}

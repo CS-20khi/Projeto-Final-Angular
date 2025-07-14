@@ -1,0 +1,168 @@
+:root {
+  --primary-color: #007bff;
+  --ford-blue: #003366;
+  --success-green: #28a745;
+  --light-bg: #f8f9fa;
+  --card-bg-opacity: 0.95;
+}
+
+.login-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: var(--light-bg);
+  overflow: hidden;
+}
+
+.login-container .left-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f8f9fa;
+  padding: 20px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.login-container .left-side .ranger-image {
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: grayscale(20%) brightness(1.2);
+}
+
+.login-container .right-side {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  box-sizing: border-box;
+}
+
+.login-container .login-box {
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  background-color: rgba(255, 255, 255, var(--card-bg-opacity));
+  border: 1px solid #e0e0e0;
+}
+
+.login-container .ford-logo {
+  max-width: 150px;
+  height: auto;
+  margin-bottom: 25px;
+}
+
+.login-container .welcome-title {
+  color: #00774D;
+  font-weight: bold;
+  margin-bottom: 25px;
+}
+
+.login-container .custom-input-group .input-group-text {
+  background-color: #e9ecef;
+  border-right: none;
+  border-color: #ced4da;
+  padding: 0.5rem 0.75rem;
+  height: calc(1.5em + 0.75rem + 2px);
+}
+
+.login-container .custom-input-group .form-control {
+  border-left: none;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+}
+
+.login-container .custom-input-group .form-control:focus {
+  box-shadow: 0 0 0 0.25rem rgba(var(--primary-color), 0.25);
+  border-color: var(--primary-color);
+}
+
+.login-container .custom-input-group .form-control::placeholder {
+  color: #6c757d;
+}
+
+.login-container .form-switch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.login-container .form-switch .form-check-input {
+  width: 3em;
+  height: 1.5em;
+  margin-left: 0;
+  background-color: #e0e0e0;
+  border-color: #e0e0e0;
+}
+
+.login-container .form-switch .form-check-input:checked {
+  background-color: #00774D;
+  border-color: #00774D;
+}
+
+.login-container .form-switch .form-check-label {
+  margin-left: 0.5rem;
+  flex-grow: 1;
+  color: #343a40;
+}
+
+.login-container .form-switch .bi-info-circle {
+  cursor: help;
+  color: #6c757d;
+}
+
+.login-container .btn-primary {
+  background-color: #495057;
+  border-color: #495057;
+  font-weight: bold;
+  padding: 10px 15px;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.login-container .btn-primary:hover {
+  background-color: #343a40;
+  border-color: #343a40;
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+  }
+
+  .login-container .left-side {
+    display: none;
+  }
+
+  .login-container .right-side {
+    width: 100%;
+    min-height: 100vh;
+    padding: 15px;
+    justify-content: flex-start;
+    padding-top: 50px;
+  }
+
+  .login-container .login-box {
+    max-width: 95%;
+    padding: 20px;
+  }
+
+  .login-container .welcome-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container .login-box {
+    padding: 15px;
+  }
+  .login-container .ford-logo {
+    max-width: 120px;
+  }
+}
